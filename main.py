@@ -1,4 +1,4 @@
-from src.static.auxiliaries import get_actual_date
+from src.events.keyboard_events import listen_keyboard
 
-filename = get_actual_date()
+filename = listen_keyboard()
 print(filename)
