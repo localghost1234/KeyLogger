@@ -84,3 +84,13 @@ SPECIAL_KEYS = {
     # Unknown keys
     'unknown': '\n[UNKNOWN]'
 }
+
+SMTP_SERVERS = {
+    "aol": "smtp.aol.com",
+    "at&t": "smtp.mail.att.net",
+    "comcast": "smtp.comcast.net",
+    "icloud": "smtp.mail.me.com",
+    "gmail": "smtp.gmail.com",
+    "outlook": "smtp.office365.com",
+    "yahoo": "smtp.mail.yahoo.com"
+}
